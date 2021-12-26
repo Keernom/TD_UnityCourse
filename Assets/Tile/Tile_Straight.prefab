@@ -7,10 +7,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1102324237485589222, guid: 6c130e3f0399cd547bb6058b99958653,
+        type: 3}
+      propertyPath: _isPlaceble
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3951810262774336609, guid: 6c130e3f0399cd547bb6058b99958653,
         type: 3}
       propertyPath: m_Name
-      value: TileStraight
+      value: Tile_Straight
       objectReference: {fileID: 0}
     - target: {fileID: 3951810262774336610, guid: 6c130e3f0399cd547bb6058b99958653,
         type: 3}

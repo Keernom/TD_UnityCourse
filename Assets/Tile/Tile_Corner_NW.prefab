@@ -41,7 +41,7 @@ PrefabInstance:
     - target: {fileID: 6143237256412584677, guid: 6b6f4ada6117e1246af6ba9da44cee63,
         type: 3}
       propertyPath: m_Name
-      value: Tile_Corner_NE 1
+      value: Tile_Corner_NW
       objectReference: {fileID: 0}
     - target: {fileID: 6143237256412584678, guid: 6b6f4ada6117e1246af6ba9da44cee63,
         type: 3}
@@ -96,6 +96,11 @@ PrefabInstance:
     - target: {fileID: 6143237256412584678, guid: 6b6f4ada6117e1246af6ba9da44cee63,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7843777200039089250, guid: 6b6f4ada6117e1246af6ba9da44cee63,
+        type: 3}
+      propertyPath: _isPlaceble
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
