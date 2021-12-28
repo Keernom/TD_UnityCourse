@@ -4798,7 +4798,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cc7827e072f0b44386ede54d0fa672d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
+  _range: 15
+  _particleBolts: {fileID: 5042637662165581278}
   _weapon: {fileID: 3144582324300694500}
 --- !u!1 &6131056645070147807
 GameObject:
