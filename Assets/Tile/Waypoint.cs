@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
+    [SerializeField] GameObject _towerBallista;
     [SerializeField] bool _isPlaceble;
     private void OnMouseDown()
     {
         if (_isPlaceble)
         {
-            Debug.Log(transform.name);
+            Instantiate(_towerBallista, transform.position, Quaternion.identity);
+            _isPlaceble = false;
         }
     }
 }
