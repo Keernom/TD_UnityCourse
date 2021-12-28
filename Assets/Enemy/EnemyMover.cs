@@ -8,9 +8,19 @@ public class EnemyMover : MonoBehaviour
     float _waitTime = 1f;
     private void Start()
     {
+        FindPath();
         StartCoroutine(FollowPath());
     }
 
+    private void FindPath()
+    {
+        GameObject[] waypoints = GameObject.FindGameObjectsWithTag("Path");
+
+        foreach(GameObject waypoint in waypoints)
+        {
+            _path.Add(waypoint.GetComponent<Waypoint>());
+        }
+    }
     IEnumerator FollowPath()
     {
         foreach (Waypoint waypoint in _path)
