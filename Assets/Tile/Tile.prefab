@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 563f65494cf3d0a45945360906eb0df0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerBallista: {fileID: 3219458064393657486, guid: 8a965e088bae16643aab3d07ccfd5e2e,
+  _towerBallista: {fileID: 738013626185077751, guid: 8a965e088bae16643aab3d07ccfd5e2e,
     type: 3}
   _isPlaceble: 1
 --- !u!65 &8231696311862215631
@@ -330,3 +330,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91dc410f528e85d45b91034cf5cf9c81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  _blockedColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
