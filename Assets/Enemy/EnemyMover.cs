@@ -6,7 +6,6 @@ using UnityEngine;
 public class EnemyMover : MonoBehaviour
 {
     [SerializeField] List<Waypoint> _path = new List<Waypoint>();
-    float _waitTime = 1f;
     [SerializeField] [Range(0f, 5f)] float _speed = 1f;
 
     Enemy _enemy;
