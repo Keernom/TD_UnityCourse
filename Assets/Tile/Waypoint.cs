@@ -17,4 +17,12 @@ public class Waypoint : MonoBehaviour
             _isPlaceble = !_isPlaced;
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Nature")
+        {
+            _isPlaceble = false;
+        }
+    }
 }
