@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Enemy))]
 public class enemyHealth : MonoBehaviour
 {
     [SerializeField] int _maxHP = 5;
-    [SerializeField] int _currentHP;
+    [Tooltip("Adds amount to maxHP when enemy dies")]
+    [SerializeField] int _difficultyRamp = 1;
+    int _currentHP;
 
     Enemy _enemy;
 
@@ -30,6 +33,7 @@ public class enemyHealth : MonoBehaviour
         if (_currentHP <= 0)
         {
             gameObject.SetActive(false);
+            _maxHP += _difficultyRamp;
             _enemy.RewardGold();
         }
     }

@@ -191,7 +191,7 @@ PrefabInstance:
     - target: {fileID: 862575750309301815, guid: 20009036b9bbff2448ce56c350cc467d,
         type: 3}
       propertyPath: m_TagString
-      value: Path
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20009036b9bbff2448ce56c350cc467d, type: 3}
@@ -558,7 +558,7 @@ PrefabInstance:
     - target: {fileID: 862575750309301815, guid: 5b0411238f8623f4582896780bce4223,
         type: 3}
       propertyPath: m_TagString
-      value: Path
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b0411238f8623f4582896780bce4223, type: 3}
@@ -719,7 +719,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startBalance: 150
   _currentBalance: 0
-  _displayBalance: {fileID: 0}
+  _displayBalance: {fileID: 1263760721}
 --- !u!4 &464974542
 Transform:
   m_ObjectHideFlags: 0
@@ -755,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 6143237256412584677, guid: 6b6f4ada6117e1246af6ba9da44cee63,
         type: 3}
       propertyPath: m_TagString
-      value: Path
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 6143237256412584678, guid: 6b6f4ada6117e1246af6ba9da44cee63,
         type: 3}
@@ -1086,7 +1086,7 @@ PrefabInstance:
     - target: {fileID: 862575750309301815, guid: 5b0411238f8623f4582896780bce4223,
         type: 3}
       propertyPath: m_TagString
-      value: Path
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b0411238f8623f4582896780bce4223, type: 3}
@@ -1909,7 +1909,7 @@ GameObject:
   - component: {fileID: 1263760722}
   - component: {fileID: 1263760721}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Gold Balance
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2168,7 +2168,7 @@ GameObject:
   - component: {fileID: 1435455361}
   m_Layer: 0
   m_Name: Path
-  m_TagString: Untagged
+  m_TagString: Path
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3081,7 +3081,7 @@ PrefabInstance:
     - target: {fileID: 862575750309301815, guid: edcaf3102f8a4fb438bea080ce88403b,
         type: 3}
       propertyPath: m_TagString
-      value: Path
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcaf3102f8a4fb438bea080ce88403b, type: 3}
