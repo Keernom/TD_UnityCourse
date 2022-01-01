@@ -9,9 +9,24 @@ public class GridManager : MonoBehaviour
 
     private void Awake()
     {
-        for(int x = 0; x < _gridSize.x; x++)
+        CreateGrid();
+    }
+
+    public Node GetNode(Vector2Int _coordinates)
+    {
+        if (_grid.ContainsKey(_coordinates))
         {
-            for(int y = 0; y < _gridSize.y; y++)
+            return _grid[_coordinates];
+        }
+
+        return null;
+    }
+
+    private void CreateGrid()
+    {
+        for (int x = 0; x < _gridSize.x; x++)
+        {
+            for (int y = 0; y < _gridSize.y; y++)
             {
                 Vector2Int _coordinates = new Vector2Int(x, y);
                 _grid.Add(_coordinates, new Node(_coordinates, true));
