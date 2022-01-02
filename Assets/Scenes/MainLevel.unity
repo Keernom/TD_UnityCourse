@@ -1243,7 +1243,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &253742840
 MonoBehaviour:
@@ -1257,11 +1257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0e16d80ac403c449dcc6df0c084799, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentSearchNode:
-    _coordiantes: {x: 6, y: 6}
-    _isWalkable: 0
-    _isExplored: 0
-    _isPath: 0
+  _startCoords: {x: 1, y: 4}
+  _destinationCoords: {x: 7, y: 10}
 --- !u!4 &256114847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 862575750309301812, guid: f0c5c57f3f2ff844f9a30aa3f22cd3ae,
@@ -2497,7 +2494,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &466037675
 PrefabInstance:
@@ -3368,7 +3365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f2a8191aa4abc84cb1285e6199f8530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gridSize: {x: 10, y: 10}
+  _gridSize: {x: 11, y: 11}
 --- !u!4 &599098397
 Transform:
   m_ObjectHideFlags: 0
@@ -3381,7 +3378,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &605448086 stripped
 Transform:
@@ -4027,7 +4024,7 @@ RectTransform:
   m_Children:
   - {fileID: 1263760720}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -5410,7 +5407,7 @@ Transform:
   - {fileID: 1098286505}
   - {fileID: 1987855101}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &873338256 stripped
 Transform:
@@ -7412,7 +7409,7 @@ Transform:
   - {fileID: 1266947065}
   - {fileID: 1385513825}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1361025523 stripped
 Transform:
@@ -10870,7 +10867,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1986386243 stripped
 Transform:
