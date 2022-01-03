@@ -5,10 +5,13 @@ using UnityEngine;
 [RequireComponent(typeof(Enemy))]
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] List<Tile> _path = new List<Tile>();
     [SerializeField] [Range(0f, 5f)] float _speed = 1f;
 
+    List<Node> _path = new List<Node>();
+
     Enemy _enemy;
+    GridManager _gridManager;
+    PathFinder _pathFinder;
 
     private void OnEnable()
     {
@@ -17,40 +20,31 @@ public class EnemyMover : MonoBehaviour
         StartCoroutine(FollowPath());
     }
 
-    private void Start()
+    private void Awake()
     {
-        _enemy = GetComponent<Enemy>();    
+        _enemy = GetComponent<Enemy>();
+        _gridManager = FindObjectOfType<GridManager>();
+        _pathFinder = FindObjectOfType<PathFinder>();
     }
 
     private void FindPath()
     {
         _path.Clear();
 
-        GameObject parent = GameObject.FindGameObjectWithTag("Path");
-
-        foreach(Transform child in parent.transform)
-        {
-            Tile waypoint = child.GetComponent<Tile>();
-
-            if (waypoint != null)
-            {
-                _path.Add(waypoint);
-            }
-        }
+        _path = _pathFinder.GetNewPath();
     }
 
     void ReturnToStart()
     {
-        transform.position = _path[0].transform.position;
+        transform.position = _gridManager.GetPositionFromCoordinates(_pathFinder.StartCoords);
     }
 
     IEnumerator FollowPath()
     {
-        foreach (Tile waypoint in _path)
+        for (int i = 0; i < _path.Count; i++)
         {
-
             Vector3 _startPose = transform.position;
-            Vector3 _endPose = waypoint.transform.position;
+            Vector3 _endPose = _gridManager.GetPositionFromCoordinates(_path[i]._coordinates);
             float _travelPercent = 0f;
 
             transform.LookAt(_endPose);
