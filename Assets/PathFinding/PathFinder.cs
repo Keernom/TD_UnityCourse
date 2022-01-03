@@ -32,8 +32,14 @@ public class PathFinder : MonoBehaviour
         _startNode = _gridManager.Grid[_startCoords];
         _destinationNode = _gridManager.Grid[_destinationCoords];
 
+        GetNewPath();
+    }
+
+    public List<Node> GetNewPath()
+    {
+        _gridManager.ResetNodes();
         BreadthFirstSearch();
-        BuildPath();
+        return BuildPath();
     }
 
     void ExploreNeighbors()
@@ -63,6 +69,9 @@ public class PathFinder : MonoBehaviour
 
     void BreadthFirstSearch()
     {
+        _frontier.Clear();
+        _reached.Clear();
+
         bool _isRunnig = true;
 
         _frontier.Enqueue(_startNode);
@@ -98,5 +107,25 @@ public class PathFinder : MonoBehaviour
         path.Reverse();
 
         return path;
+    }
+
+    public bool WillBlockThePath(Vector2Int coordiantes)
+    {
+        if (_grid.ContainsKey(coordiantes))
+        {
+            bool previousState = _grid[coordiantes]._isWalkable;
+            _grid[coordiantes]._isWalkable = false;
+
+            List<Node> newPath = GetNewPath();
+            _grid[coordiantes]._isWalkable = previousState;
+
+            if(newPath.Count <= 1)
+            {
+                GetNewPath();
+                return true;
+            }
+        }
+
+        return false;
     }
 }
