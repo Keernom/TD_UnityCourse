@@ -25,14 +25,15 @@ public class PathFinder : MonoBehaviour
         {
             _grid = _gridManager.Grid;
         }
-
-        _startNode = new Node(_startCoords, true);
-        _destinationNode = new Node(_destinationCoords, true);
     }
 
     private void Start()
     {
+        _startNode = _gridManager.Grid[_startCoords];
+        _destinationNode = _gridManager.Grid[_destinationCoords];
+
         BreadthFirstSearch();
+        BuildPath();
     }
 
     void ExploreNeighbors()
@@ -41,7 +42,7 @@ public class PathFinder : MonoBehaviour
 
         foreach (Vector2Int direction in _directions)
         {
-            Vector2Int neighborCoords = _currentSearchNode._coordiantes + direction;
+            Vector2Int neighborCoords = _currentSearchNode._coordinates + direction;
 
             if (_grid.ContainsKey(neighborCoords))
             {
@@ -51,9 +52,10 @@ public class PathFinder : MonoBehaviour
 
         foreach (Node neighbor in neighbors)
         {
-            if (! _reached.ContainsKey(neighbor._coordiantes) && neighbor._isWalkable)
+            if (!_reached.ContainsKey(neighbor._coordinates) && neighbor._isWalkable)
             {
-                _reached.Add(neighbor._coordiantes, neighbor);
+                neighbor._connectedTo = _currentSearchNode;
+                _reached.Add(neighbor._coordinates, neighbor);
                 _frontier.Enqueue(neighbor);
             }
         }
@@ -71,10 +73,30 @@ public class PathFinder : MonoBehaviour
             _currentSearchNode = _frontier.Dequeue();
             _currentSearchNode._isExplored = true;
             ExploreNeighbors();
-            if (_currentSearchNode._coordiantes == _destinationCoords)
+            if (_currentSearchNode._coordinates == _destinationCoords)
             {
                 _isRunnig = false;
             }
         }
+    }
+
+    List<Node> BuildPath()
+    {
+        List<Node> path = new List<Node>();
+        Node currentNode = _destinationNode;
+
+        path.Add(_destinationNode);
+        currentNode._isPath = true;
+
+        while(currentNode._connectedTo != null)
+        {
+            currentNode = currentNode._connectedTo;
+            path.Add(currentNode);
+            currentNode._isPath = true;
+        }
+
+        path.Reverse();
+
+        return path;
     }
 }
