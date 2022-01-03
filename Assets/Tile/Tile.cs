@@ -19,6 +19,14 @@ public class Tile : MonoBehaviour
         _pathFinder = FindObjectOfType<PathFinder>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Nature")
+        {
+            _isPlaceble = false;
+        }
+    }
+
     private void Start()
     {
         if (_gridManager != null)
@@ -42,14 +50,6 @@ public class Tile : MonoBehaviour
                 _gridManager.BlockNode(_coordinates);
                 _pathFinder.NotifyReceivers();
             }
-        }
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "Nature")
-        {
-            _isPlaceble = false;
         }
     }
 }
